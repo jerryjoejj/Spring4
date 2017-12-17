@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.lma.injectfun.Car"
+        p:brand="宝马"
+        p:maxSpeed="200"
+        p:color="black"/>
+    <!-- 运行时为MagicBoss提供动态实现 -->
+    <bean id="magicBoss" class="com.lma.injectfun.MagicBoss">
+        <lookup-method name="getCar" bean="car"/>
+    </bean>
+
+    <bean id="boss1" class="com.lma.injectfun.Boss1">
+        <replaced-method name="getCar" replacer="boss2"></replaced-method>
+    </bean>
+    <bean id="boss2" class="com.lma.injectfun.Boss2"></bean>
+</beans>
