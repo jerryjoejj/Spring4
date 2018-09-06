@@ -33,5 +33,5 @@ document-item.properties
 word-item.properties
 spider.properties
 upyun.properties
-Gateway/src/main/webapp/WEB-INF/lib
-Backend/src/main/webapp/WEB-INF/lib
+*/src/main/webapp/WEB-INF/lib
+*/src/main/webapp/WEB-INF/lib
